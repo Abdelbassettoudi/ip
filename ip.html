@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>IP Address</title>
+    <title>IP Address Information</title>
 </head>
 <body>
     <h1>Your IP Address Information:</h1>
@@ -16,11 +16,11 @@
                 if (this.readyState == 4 && this.status == 200) {
                     var response = JSON.parse(this.responseText);
                     document.getElementById("ip").innerHTML = response.ip;
-                    document.getElementById("country").innerHTML = response.country;
+                    document.getElementById("country").innerHTML = response.country_name;
                     document.getElementById("city").innerHTML = response.city;
                 }
             };
-            xhttp.open("GET", "https://ipapi.co/json", true);
+            xhttp.open("GET", "https://ipapi.co/json/", true);
             xhttp.send();
         };
     </script>
